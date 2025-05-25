@@ -1,0 +1,602 @@
+/* cart-new-style.css */
+
+/* Import font từ Google Fonts. Ví dụ dùng Lato hoặc Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;500;600;700&display=swap');
+
+/* Reset cơ bản và font chữ chung */
+body {
+    font-family: 'Lato', sans-serif; /* Font chính cho nội dung */
+    background-color: #ffffff; /* Nền sáng, hơi xanh xám */
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+/* Header chung (giữ nguyên hoặc điều chỉnh trong style.css) */
+.main-header {
+    background-color: #2c3e50; /* Màu nền header tối hơn */
+    color: #ace1ee;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.main-header .logo {
+    font-family: 'Montserrat', sans-serif; /* Font riêng cho logo */
+    font-size: 26px;
+    font-weight: 700;
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 35px;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: #bdc3c7; /* Màu chữ menu nhạt hơn */
+    font-size: 17px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 5px; /* Cho hiệu ứng underline */
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+    color: #ffffff; /* Màu chữ sáng hơn khi hover/active */
+}
+
+/* Hiệu ứng gạch chân khi hover */
+.main-nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #3498db; /* Màu highlight */
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.main-nav ul li a:hover::after,
+.main-nav ul li a.active::after {
+    width: 100%;
+    left: 0;
+}
+
+
+.header-right {
+    display: flex;
+    gap: 25px;
+}
+
+.header-right .icon-link {
+    color: #ecf0f1;
+    font-size: 19px;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.header-right .icon-link:hover {
+    color: #3498db; /* Màu xanh khi hover */
+}
+
+.cart-icon .cart-count {
+    background-color: #e74c3c; /* Màu đỏ nổi bật cho số lượng giỏ hàng */
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 3px 7px;
+    position: absolute;
+    top: -10px;
+    right: -12px;
+    min-width: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+
+/* --- Main Cart Content --- */
+.cart-main-content {
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-grow: 1; /* Cho phép phần này lấp đầy không gian còn lại */
+}
+
+.cart-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Bóng đổ mạnh mẽ hơn */
+    padding: 40px 50px;
+    max-width: 960px; /* Rộng hơn một chút */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.cart-container h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #2c3e50; /* Tiêu đề mạnh mẽ */
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+}
+
+.cart-container h1::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #3498db; /* Đường kẻ dưới tiêu đề */
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+
+/* --- Cart Item Styling --- */
+#cart-items-wrapper {
+    margin-bottom: 30px;
+}
+
+.cart-item {
+    display: grid; /* Sử dụng Grid cho bố cục linh hoạt hơn */
+    grid-template-columns: 120px 1fr auto auto; /* Ảnh, Chi tiết, Giá, Xóa */
+    gap: 20px;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #ebf0f5; /* Đường kẻ nhẹ nhàng */
+    position: relative;
+}
+
+.cart-item:last-of-type {
+    border-bottom: none;
+}
+
+.cart-item-image-wrapper {
+    width: 100%;
+    height: 120px; /* Chiều cao cố định */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.cart-item-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.cart-item-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cart-item-details h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #34495e;
+    margin-bottom: 8px;
+}
+
+.cart-item-details p {
+    font-size: 0.95em;
+    color: #7f8c8d;
+    margin-bottom: 5px;
+}
+
+.item-quantity-control {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ced4da; /* Viền mỏng */
+    border-radius: 6px;
+    overflow: hidden;
+    width: fit-content; /* Chỉ rộng bằng nội dung */
+    margin-top: 10px;
+}
+
+.item-quantity-control button {
+    background-color: #f8f9fa; /* Nền nút nhẹ */
+    border: none;
+    padding: 10px 15px; /* Lớn hơn một chút */
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #555;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.item-quantity-control button:hover {
+    background-color: #e9ecef;
+    color: #3498db;
+}
+
+.item-quantity-control input {
+    width: 50px; /* Rộng hơn */
+    text-align: center;
+    border: none;
+    font-size: 1.1em;
+    color: #333;
+    background-color: #fff;
+    padding: 10px 0;
+}
+
+.cart-item-price {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #27ae60; /* Màu xanh lá cây cho giá */
+    text-align: right;
+}
+
+.remove-item-btn {
+    background: none;
+    border: none;
+    color: #e74c3c; /* Màu đỏ nổi bật */
+    font-size: 1.3em;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.remove-item-btn:hover {
+    color: #c0392b;
+    transform: scale(1.1);
+}
+
+/* --- Cart Summary --- */
+.cart-summary {
+    border-top: 1px solid #ebf0f5;
+    padding-top: 30px;
+    margin-top: 40px;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 1.15em;
+    color: #555;
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 2px dashed #e0e0e0; /* Đường kẻ phân cách */
+}
+
+.checkout-btn {
+    display: block;
+    width: 100%;
+    padding: 18px 30px;
+    background-color: #3498db; /* Màu xanh nổi bật */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.3em;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 40px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4); /* Bóng đổ cho nút */
+}
+
+.checkout-btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.6);
+}
+
+.continue-shopping-link {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    color: #3498db;
+    text-decoration: none;
+    font-size: 1.05em;
+    font-weight: 500;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.continue-shopping-link:hover {
+    text-decoration: underline;
+    color: #2980b9;
+}
+
+/* --- Empty Cart Message --- */
+.empty-cart-message {
+    text-align: center;
+    padding: 80px 20px;
+    color: #7f8c8d;
+    font-size: 1.1em;
+    background-color: #fcfcfc;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+}
+
+.empty-cart-message i {
+    font-size: 4em;
+    color: #bdc3c7;
+    margin-bottom: 20px;
+}
+
+.empty-cart-message p {
+    margin-bottom: 30px;
+}
+
+.empty-cart-message .continue-shopping-btn {
+    display: inline-block;
+    padding: 14px 30px;
+    background-color: #2ecc71; /* Màu xanh lá cây thân thiện */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(46, 204, 113, 0.3);
+}
+
+.empty-cart-message .continue-shopping-btn:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .main-header {
+        padding: 15px 20px;
+    }
+    .main-nav {
+        display: none; /* Ẩn menu nav trên mobile, có thể thay bằng menu hamburger */
+    }
+    .header-right {
+        width: 100%;
+        justify-content: flex-end;
+        margin-top: 10px;
+    }
+
+    .cart-container {
+        padding: 25px 20px;
+    }
+
+    .cart-container h1 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    .cart-item {
+        grid-template-columns: 80px 1fr; /* Ảnh, Chi tiết/Giá/Xóa */
+        grid-template-areas:
+            "image details"
+            "image controls";
+        gap: 15px 10px;
+        padding: 15px 0;
+    }
+
+    .cart-item-image-wrapper {
+        width: 80px;
+        height: 80px;
+        grid-area: image;
+    }
+
+    .cart-item-details {
+        grid-area: details;
+        text-align: left;
+    }
+
+    .cart-item-details h4 {
+        font-size: 1.1em;
+    }
+
+    .cart-item-details p {
+        font-size: 0.85em;
+    }
+
+    .item-quantity-control {
+        grid-area: controls;
+        justify-content: center; /* Canh giữa trên mobile */
+        margin-top: 0; /* Loại bỏ margin top */
+        width: 100%; /* Chiếm toàn bộ chiều rộng có sẵn */
+        flex-wrap: wrap; /* Cho phép các nút wrap */
+        border: none; /* Bỏ viền để gọn hơn */
+    }
+    .item-quantity-control button {
+        padding: 8px 12px;
+        font-size: 1em;
+    }
+    .item-quantity-control input {
+        width: 40px;
+        font-size: 1em;
+        padding: 8px 0;
+    }
+
+    .cart-item-price {
+        grid-column: 2; /* Đặt giá bên cạnh chi tiết */
+        grid-row: 1; /* Cùng dòng với chi tiết */
+        text-align: right;
+        font-size: 1.1em;
+        margin-left: auto; /* Đẩy sang phải */
+    }
+
+    .remove-item-btn {
+        position: static; /* Đưa về vị trí mặc định */
+        margin-left: 0;
+        font-size: 1.1em;
+        padding: 5px; /* Thêm padding cho dễ click */
+        /* Nếu muốn nút xóa nằm ở góc trên phải trên mobile, bạn có thể dùng position: absolute và đặt top/right */
+    }
+
+    .summary-total {
+        font-size: 1.5em;
+    }
+
+    .checkout-btn {
+        font-size: 1.1em;
+        padding: 15px 20px;
+    }
+}
+
+
+/* ---------- FOOTER ---------------------*/
+.footer {
+    background-color: #d2c7c7;
+    color: #555;
+    padding: 40px 20px;
+    border-top: 1px solid #eee;
+    font-size: 15PX;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.footer-column {
+    flex: 1 1 200px; /* Các cột có chiều rộng tối thiểu 200px và chia đều không gian */
+    margin-bottom: 20px;
+}
+
+.footer-column h3 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #777;
+}
+
+.footer-column ul li a:hover {
+    color: #333;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color:black; /* Màu xanh dương cho số điện thoại */
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.footer-social a {
+    display: inline-block;
+    margin-right: 15px;
+    color: #777;
+    font-size: 2em; /* Kích thước icon */
+    text-decoration: none;
+}
+
+.footer-social a:hover {
+    color: #333;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #777;
+    font-size: 0.8em;
+}
+
+.secure-badge img {
+    height: 40px; /* Điều chỉnh chiều cao logo bảo mật */
+}
+
+/* Стиль cho icon Font Awesome (nếu bạn chưa có) */
+.fab {
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+    font-style: normal;
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-facebook-f::before { content: "\f39e"; }
+.fa-instagram::before { content: "\f16d"; }
+.fa-youtube::before { content: "\f167"; }
+.fa-tiktok::before { content: "\fabd"; }
+
+/* Responsive cho màn hình nhỏ hơn */
+@media (max-width: 768px) {
+    .footer-content {
+        justify-content: space-around;
+    }
+
+    .footer-column {
+        flex: 1 1 150px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-bottom p {
+        margin-bottom: 10px;
+    }
+}

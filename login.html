@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng nhập / Đăng ký</title>
+    <link rel="stylesheet" href="style_login_exact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="login-wrapper">
+        <div class="login-container" id="loginContainer">
+            <h2>Đăng nhập</h2>
+            <div class="social-login">
+                <a href="https://www.facebook.com/login" class="social-button facebook">
+                    <i class="fab fa-facebook-f"></i> Login with Facebook
+                </a>
+                <a href="https://twitter.com/login" class="social-button twitter">
+                    <i class="fab fa-twitter"></i> Login with Twitter
+                </a>
+            </div>
+            <div class="separator">Or</div>
+            <form id="loginForm">
+                <div class="input-group">
+                    <input type="text" id="loginUsername" placeholder="Tên đăng nhập" required>
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="loginPassword" placeholder="Mật khẩu" required>
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="options">
+                    <label>
+                        <input type="checkbox" name="remember"> Remember me
+                    </label>
+                    <a href="#">Forgot your password?</a>
+                </div>
+                <button type="submit" class="login-button">Đăng nhập</button>
+            </form>
+            <div class="signup-link">
+                Chưa có tài khoản? <a href="#" id="showRegisterForm">Đăng ký</a>
+            </div>
+        </div>
+
+        <div class="register-container" id="registerContainer" style="display: none;">
+            <h2>Đăng ký</h2>
+            <form id="registerForm">
+                <div class="input-group">
+                    <input type="text" id="registerUsername" placeholder="Tên đăng nhập" required>
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="registerEmail" placeholder="Email" required>
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="registerPassword" placeholder="Mật khẩu" required>
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="confirmPassword" placeholder="Xác nhận mật khẩu" required>
+                    <i class="fas fa-lock"></i>
+                </div>
+                <button type="submit" class="register-button">Đăng ký</button>
+            </form>
+            <div class="signup-link">
+                Đã có tài khoản? <a href="#" id="showLoginForm">Đăng nhập</a>
+            </div>
+        </div>
+
+        <div class="logout-container" id="logoutContainer" style="display: none;">
+            <h2>Đã đăng nhập</h2>
+            <p id="loggedInUser"></p>
+            <button id="logoutButton" class="logout-button">Đăng xuất</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
