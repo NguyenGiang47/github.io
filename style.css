@@ -731,6 +731,17 @@ body {
     margin-right: 0;
 }                                               /*   phần Sản Phẩm Mới */
 
+.product-card-link {
+    text-decoration: none; /* Xóa dấu gạch chân */
+    color: inherit;      /* Giữ nguyên màu chữ của phần tử cha */
+}
+
+/* Nếu bạn cũng muốn xóa gạch chân cho liên kết "Xem toàn bộ sản phẩm" */
+.view-all-link {
+    text-decoration: none; /* Xóa dấu gạch chân */
+    color: inherit;      /* Hoặc đặt màu cụ thể nếu bạn muốn */
+}
+
 /* Стиль cho nút điều hướng (nếu bạn thêm) */
 .new-products-navigation {
     display: flex;
@@ -983,19 +994,20 @@ body {
 
 .quick-view-btn {
     position: absolute;
-    bottom: -15px; /* Tăng giá trị để đẩy xuống (từ 10px) */
+    bottom: 15px; /* Tăng giá trị để đẩy xuống (từ 10px) */
     left: 50%; /* Tăng giá trị để dịch sang phải (từ 50%) */
     transform: translateX(-50%); /* Giữ nguyên để căn chỉnh từ điểm giữa */
     background-color: #000;
     color: white;
     border: none;
     padding: 8px 15px;
-    border-radius: 5px;
+    border-radius: 50px;
     cursor: pointer;
     font-size: 0.5em;
     opacity: 0; /* Ẩn ban đầu */
     transition: opacity 0.3s ease-in-out; /* Hiệu ứng mờ dần */
     z-index: 20; /* Đảm bảo hiển thị trên các phần tử khác */
+    font-size: 10px;
 }
 
 .product-item:hover .quick-view-btn {
