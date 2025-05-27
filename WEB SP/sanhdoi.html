@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POLOMANOR</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/timkiem.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="top-bar">
+        <span>ĐƠN 500K: GIẢM 5% TỔNG ĐƠN + FREESHIP &nbsp;&nbsp;&nbsp;&nbsp;●&nbsp;&nbsp;&nbsp;&nbsp; ĐƠN 800K: GIẢM 5% + TẶNG 1 QUẦN BOXER 99K + FREESHIP &nbsp;&nbsp;&nbsp;&nbsp;●&nbsp;&nbsp;&nbsp;&nbsp; ĐƠN 500K: GIẢM 5% TỔNG ĐƠN + FREESHIP &nbsp;&nbsp;&nbsp;&nbsp;●&nbsp;&nbsp;&nbsp;&nbsp; 1000K: GIẢM 10% + TẶNG 2 QUẦN BOXER 199K + FREESHIP</span>
+    </div>
+
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-overlay-content">
+            <div class="search-header">
+                <input type="text" id="overlaySearchInput" placeholder="Tìm kiếm sản phẩm..."> <button id="closeSearchBtn" aria-label="Đóng"><i class="close-icon">&times;</i></button> </div>
+            <div id="searchResultsContainer"> <p id="noResultsMessage" style="display: none;">Không tìm thấy sản phẩm nào.</p>
+            </div>
+            </div>
+    </div>
+
+    <header class="header">
+        <div class="logo">POLOMANOR</div>
+        <nav class="navigation">
+            <ul>
+                <li><a href="/newin.html">New-in</a></li>
+                <li class="dropdown">
+                    <a href="#">Sản phẩm <i class="dropdown-icon">▼</i></a>
+                    <div class="dropdown-content">
+                        <a href="/ao.html">Áo</a>
+                        <a href="/T-shirt.html">T-shirt</a>
+                        <a href="/Quan.html">Quần</a>
+                        <a href="/Quandai.html">Quần dài</a>
+                        <a href="/Quanshort.html">Quần short</a>
+                        <a href="/Banchaynhat.html">Bán chạy nhất</a>
+                        <a href="Tatcacasanpham.html">Tất cả sản phẩm</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Bộ sưu tập <i class="dropdown-icon">▼</i></a>
+                    <div class="dropdown-content">
+                        <a href="html/Tet2026.html">Tết 2026</a>
+                        <a href="html/sanhdoi.html">Sánh Đôi</a>
+                        <a href="html/tunharathanhpho.html">Từ Nhà Ra Thành Phố</a>
+                    </div>
+                </li>
+                <li><a href="html/lienhe.html">Liên hệ</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-icons">
+            <a href="#" id="openSearchBtn"><i class="fas fa-search"></i></a> <a href="/login.html"><i class="fas fa-user"></i></a> <a href="#" id="logoutButtonHeader"><i class="fas fa-door-open"></i></a> <a href="/cart.html"><i class="fas fa-shopping-cart"></i></a> </div>
+    </header>
+
+    <main class="main-content">
+        <section class="hero">
+            <button id="prev-btn">←</button>
+            <div class="hero-image">
+                <img id="hero-img" src="imgindex/ao-polo-nam-pc.webp" alt="Ảnh Hero 1" />
+            </div>
+            <button id="next-btn">→</button>
+        </section>
+    </main>
+
+    <section class="product-categories">
+        <h2>Danh Mục Sản Phẩm</h2>
+        <div class="category-list">
+            <div class="category-item" onclick="location.href='Polo.html'">
+                <img src="imgpolo/ao-polo-nam-ray.webp" alt="Áo Polo" />
+                <div class="overlay">
+                    <h3>Áo Polo</h3>
+                    <div class="arrow">➔</div>
+                </div>
+            </div>
+            <div class="category-item" onclick="location.href='T-shirt.html'">
+                <img src="imgaothun/ao-thun-nam-mike.webp" alt="Áo Thun" />
+                <div class="overlay">
+                    <h3>Áo Thun</h3>
+                    <div class="arrow">➔</div>
+                </div>
+            </div>
+            <div class="category-item" onclick="location.href='Quan.html'">
+                <img src="imgquandai/quan-kaki-sd-gan.webp" alt="Quần " />
+                <div class="overlay">
+                    <h3>Quần Dài</h3>
+                    <div class="arrow">➔</div>
+                </div>
+            </div>
+            <div class="category-item" onclick="location.href='Quanshort.html'">
+                <img src="imgquanshort/quan-kaki.webp" alt="Quần Short" />
+                <div class="overlay">
+                    <h3>Quần Short</h3>
+                    <div class="arrow">➔</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="new-products-section">
+        <div class="container">
+            <div class="new-products-header">
+                <h2>Sản Phẩm Mới</h2>
+                <a href="#" class="view-all-link">Xem toàn bộ sản phẩm <i class="arrow-right">➔</i></a>
+            </div>
+            <div class="new-products-list">
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="imgpolo/ao-polo-nam-naoh.webp" alt="Áo Polo Nam Noah" />
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Áo Polo Nam Noah</h3>
+                        <div class="product-price">
+                            <span class="original-price">349.000đ</span>
+                            <span class="discounted-price">198.000đ</span>
+                        </div>
+                        <button class="quick-view-btn">+ Thêm nhanh</button>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="imgpolo/ao-polo-nam-ray.webp" alt="Áo Polo Nam RAY" />
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Áo Polo Nam Ray</h3>
+                        <div class="product-price">
+                            <span class="original-price">349.000đ</span>
+                            <span class="discounted-price">198.000đ</span>
+                        </div>
+                        <button class="quick-view-btn">+ Thêm nhanh</button>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="imgpolo/ao-polo-nam-wind.webp" alt="Áo Polo Nam WIND" />
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Áo Polo Nam Wind</h3>
+                        <div class="product-price">
+                            <span class="original-price">319.000đ</span>
+                            <span class="discounted-price">188.000đ</span>
+                        </div>
+                        <button class="quick-view-btn">+ Thêm nhanh</button>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="imgpolo/ao-polo-nam-milo.webp" alt="Áo Polo Nam Milo" />
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Áo Polo Nam Milo</h3>
+                        <div class="product-price">
+                            <span class="original-price">369.000đ</span>
+                            <span class="discounted-price">288.000đ</span>
+                        </div>
+                        <div class="color-options">
+                            <span class="color-swatch" style="background-color: #d9d9d9"></span>
+                            <span class="color-swatch" style="background-color: #d68787"></span>
+                            <span class="color-swatch" style="background-color: #f8c5c5"></span>
+                            <span class="color-swatch">+1</span>
+                        </div>
+                        <button class="quick-view-btn">+ Thêm nhanh</button>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="imgpolo/ao-polo-nam-simon.webp" alt="Áo Polo Nam Simon" />
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Áo Polo Nam Simon</h3>
+                        <div class="product-price">
+                            <span class="original-price">349.000đ</span>
+                            <span class="discounted-price">198.000đ</span>
+                        </div>
+                        <div class="color-options">
+                            <span class="color-swatch" style="background-color: #734a4a"></span>
+                            <span class="color-swatch" style="background-color: #593d3d"></span>
+                            <span class="color-swatch" style="background-color: #403030"></span>
+                        </div>
+                        <button class="quick-view-btn">+ Thêm nhanh</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="best-selling-products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Sản Phẩm Bán Chạy</h2>
+                <a href="#" class="view-all-link">Xem thêm <i class="arrow-right">➔</i></a>
+            </div>
+            <div class="product-slider">
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="imgaothun/ao-thun-nam-mike.webp" alt="Áo Thun Nam Mike" />
+                        <div class="discount-badge">Tiết kiệm 31.000đ</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Áo Thun Nam Mike</h3>
+                        <div class="product-price">
+                            <span class="original-price">319.000đ</span>
+                            <span class="discounted-price">288.000đ</span>
+                        </div>
+                        <div class="color-options">
+                            <span class="color-swatch" style="background-color: #ffffff;"></span>
+                            <span class="color-swatch" style="background-color: #000000;"></span>
+                            <span class="more-colors">+6</span>
+                        </div>
+                        <button class="quick-view-btn">+ Thêm nhanh</button>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="imgquanshort/quan-kaki.webp" alt="Quần Shorts Nam Kaki" />
+                        <div class="discount-badge">Tiết kiệm 61.000đ</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Quần Shorts Nam Kaki</h3>
+                        <div class="product-price">
+                            <span class="original-price">319.000đ</span>
+                            <span class="discounted-price">258.000đ</span>
+                        </div>
+                        <div class="color-options">
+                            <span class="color-swatch" style="background-color: #f5f5dc;"></span>
+                            <span class="color-swatch" style="background-color: #000000;"></span>
+                            <span class="more-colors">+1</span>
+                        </div>
+                        <button class="quick-view-btn">+ Thêm nhanh</button>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="imgpolo/ao-polo-nam-basic-dimonod.webp" alt="Áo Polo Nam Basic Classic" />
+                        <div class="discount-badge">Tiết kiệm 61.000đ</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Áo Polo Nam Basic Classic</h3>
+                        <div class="product-price">
+                            <span class="original-price">329.000đ</span>
+                            <span class="discounted-price">268.000đ</span>
+                        </div>
+                        <div class="color-options">
+                            <span class="color-swatch" style="background-color: #f0f0f0;"></span>
+                            <span class="color-swatch" style="background-color: #000080;"></span>
+                            <span class="more-colors">+5</span>
+                        </div>
+                        <button class="quick-view-btn">+ Thêm nhanh</button>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="imgpolo/ao-polo-nam-kanis.webp" alt="Áo Polo Nam Kanis" />
+                        <div class="new-badge">New Color</div>
+                        <div class="discount-badge">Tiết kiệm 11.000đ</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Áo Polo Nam Kanis</h3>
+                        <div class="product-price">
+                            <span class="original-price">339.000đ</span>
+                            <span class="discounted-price">328.000đ</span>
+                        </div>
+                        <div class="color-options">
+                            <span class="color-swatch" style="background-color: #ffffff;"></span>
+                            <span class="color-swatch" style="background-color: #191970;"></span>
+                        </div>
+                        <button class="quick-view-btn">+ Thêm nhanh</button>
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="imgquandai/quan-kaki-sd-gan.webp" alt="Quần Dài Nam Gân" />
+                        <div class="discount-badge">Tiết kiệm 21.000đ</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Quần Dài Nam Gân</h3>
+                        <div class="product-price">
+                            <span class="original-price">399.000đ</span>
+                            <span class="discounted-price">378.000đ</span>
+                        </div>
+                        <div class="color-options">
+                            <span class="color-swatch" style="background-color: #d2b48c;"></span>
+                            <span class="color-swatch" style="background-color: #000000;"></span>
+                        </div>
+                        <button class="quick-view-btn">+ Thêm nhanh</button>
+                    </div>
+                </div>
+            </div>
+            <button class="slider-control prev-btn"><i class="arrow-left"></i></button>
+            <button class="slider-control next-btn"><i class="arrow-right"></i></button>
+        </div>
+    </section>
+
+    <section class="brand-positioning">
+        <div class="brand-content">
+            <h2>Định vị thương hiệu</h2>
+            <p class="tagline">New class of casual Polo</p>
+            <p class="description">
+                Polomanor định vị sự khác biệt đến từ những chiếc áo Polo đời thường hằng ngày, mỗi sản phẩm mang đủ 3 yếu tố:
+                <br>
+                Dễ phối - Sang trọng - Tiện lợi
+            </p>
+        </div>
+    </section>
+
+    <section class="kham-pha-section">
+        <h2>Khám phá</h2>
+        <div class="kham-pha-grid">
+            <img src="imgindex/NHOM4.webp" alt="Nghiện Polo">
+            <img src="imgindex/NHOM5.webp" alt="Instagram">
+            <img src="imgindex/NHOM6.webp" alt="tiktok">
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-column">
+                <h3>Về chúng tôi</h3>
+                <ul>
+                    <li><a href="html/gioithieu.html">Giới thiệu</a></li>
+                    <li><a href="#">Điều khoản sử dụng</a></li>
+                    <li><a href="#">Cơ hội việc làm</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Phương thức thanh toán</h3>
+                <ul>
+                    <li><a href="#">COD</a></li>
+                    <li><a href="#">ATM</a></li>
+                    <li><a href="#">VISA/MASTERCARD</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Hỗ trợ khách hàng</h3>
+                <ul>
+                    <li><a href="#">Chính sách đổi / hoàn trả</a></li>
+                    <li><a href="#">Chính sách bảo hành</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Chính sách kiểm hàng</a></li>
+                </ul>
+            </div>
+            <div class="footer-column contact-info">
+                <h3>Dịch vụ khách hàng</h3>
+                <p>Mua hàng online: <a href="tel:0962779696">0962779696</a></p>
+                <p>Góp ý, khiếu nại: <a href="tel:0962779696">0962779696</a></p>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/profile.php?id=100085718139349" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/@ChillVibesEDM" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/@traihonguyenviet" target="_blank"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Nguyễn Viết Giang</p>
+            <div class="secure-badge">
+                <img src="imgindex/anhgiang.jpg" alt="Secure Connection" />
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="js/search.js"></script> </body>
+</html>

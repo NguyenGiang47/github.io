@@ -1,0 +1,142 @@
+/* Custom styles for the All Products page */
+
+.products-page-main {
+    padding: 40px 0;
+    background-color: #f8f8f8;
+}
+
+.products-page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.products-page-main h1 {
+    text-align: center;
+    font-size: 3em;
+    color: #333;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.products-page-main h1::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #007bff;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Product Filters/Sorting */
+.product-filters {
+    display: flex;
+    justify-content: flex-end; /* Căn phải các bộ lọc */
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Cho phép xuống dòng trên màn hình nhỏ */
+    background-color: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-group label {
+    font-weight: bold;
+    color: #555;
+    font-size: 0.95em;
+}
+
+.filter-group select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.95em;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.filter-group select:hover,
+.filter-group select:focus {
+    border-color: #007bff;
+}
+
+/* Product Grid for All Products */
+/* Sử dụng lại .product-grid và .product-item từ style.css */
+/* Chỉ cần đảm bảo rằng các thuộc tính của chúng phù hợp */
+.products-section.all-products-grid .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Có thể tăng kích thước item nếu muốn */
+    gap: 25px; /* Điều chỉnh khoảng cách */
+}
+
+.products-section.all-products-grid .product-item {
+    /* Đảm bảo style của từng item giống nhau hoặc có thể tùy chỉnh */
+    padding: 10px; /* Có thể điều chỉnh padding */
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 10px;
+}
+
+.pagination .page-link {
+    display: block;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: #007bff;
+    background-color: #fff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: bold;
+}
+
+.pagination .page-link:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.pagination .page-link.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+    cursor: default;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .products-page-main h1 {
+        font-size: 2.2em;
+    }
+
+    .product-filters {
+        justify-content: center; /* Căn giữa bộ lọc trên di động */
+        flex-direction: column; /* Xếp bộ lọc theo chiều dọc */
+        align-items: flex-start;
+        gap: 15px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .products-section.all-products-grid .product-grid {
+        grid-template-columns: 1fr; /* Một cột trên màn hình rất nhỏ */
+    }
+    .pagination {
+        flex-wrap: wrap; /* Cho phép phân trang xuống dòng */
+    }
+    .pagination .page-link {
+        padding: 8px 12px;
+    }
+}

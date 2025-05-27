@@ -1,0 +1,503 @@
+/* checkout.css */
+
+/* Import font Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header (Nếu bạn đã có style.css, phần này có thể bị trùng hoặc ghi đè) */
+.main-header {
+    background-color: #ffffff; /* Nền trắng cho header */
+    color: #333;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #007bff; /* Logo màu xanh chính */
+    text-decoration: none;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: #555;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+    color: #007bff;
+}
+
+.header-right {
+    display: flex;
+    gap: 20px;
+}
+
+.header-right .icon-link {
+    color: #555;
+    font-size: 18px;
+    text-decoration: none;
+    position: relative;
+}
+
+.header-right .icon-link:hover {
+    color: #007bff;
+}
+
+.cart-icon .cart-count {
+    background-color: #dc3545; /* Màu đỏ cho giỏ hàng */
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 2px 6px;
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    min-width: 18px;
+    text-align: center;
+}
+
+
+/* --- Main Checkout Content --- */
+.checkout-main-content {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-grow: 1;
+}
+
+.checkout-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 30px 40px;
+    max-width: 1100px; /* Rộng hơn để chứa 2 cột */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.checkout-container h1 {
+    font-size: 2.2em;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.checkout-steps {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    gap: 15px;
+}
+
+.checkout-steps .step {
+    font-size: 1.1em;
+    color: #ccc;
+    font-weight: 500;
+    position: relative;
+    padding: 0 10px;
+}
+
+.checkout-steps .step.active {
+    color: #007bff; /* Màu xanh active */
+    font-weight: 600;
+}
+
+.checkout-steps .step:not(:last-child)::after {
+    content: '\f054'; /* Font Awesome chevron-right */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ccc;
+    font-size: 0.8em;
+}
+
+.checkout-steps .step.active:not(:last-child)::after {
+    color: #007bff; /* Mũi tên active */
+}
+
+/* --- Checkout Content Layout (2 columns) --- */
+.checkout-content {
+    display: flex;
+    gap: 40px; /* Khoảng cách giữa 2 cột */
+}
+
+.shipping-payment-section {
+    flex: 2; /* Cột thông tin chiếm 2 phần */
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.03);
+}
+
+.order-summary-section {
+    flex: 1; /* Cột tóm tắt đơn hàng chiếm 1 phần */
+    background-color: #f0f3f6; /* Nền khác biệt cho tóm tắt */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* --- Section Headings --- */
+.shipping-info h2,
+.shipping-method h2,
+.payment-method h2,
+.order-summary-section h2 {
+    font-size: 1.6em;
+    font-weight: 600;
+    color: #34495e;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* --- Form Group Styling --- */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.95em;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.form-group .required {
+    color: #e74c3c;
+    margin-left: 3px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: calc(100% - 20px); /* Kích thước trừ padding */
+    padding: 12px 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    color: #333;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box; /* Quan trọng để padding không làm tăng kích thước */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical; /* Cho phép thay đổi chiều cao */
+    min-height: 80px;
+}
+
+.form-group.inline-group {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group.inline-group > div {
+    flex: 1;
+}
+
+/* --- Shipping and Payment Options --- */
+.shipping-method,
+.payment-method {
+    margin-top: 40px;
+}
+
+.shipping-option,
+.payment-option {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.shipping-option:hover,
+.payment-option:hover {
+    border-color: #007bff;
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.1);
+}
+
+.shipping-option input[type="radio"],
+.payment-option input[type="radio"] {
+    margin-right: 15px;
+    margin-top: 4px; /* Căn chỉnh với label */
+    transform: scale(1.2); /* Phóng to radio button */
+    accent-color: #007bff; /* Màu sắc của radio button khi chọn */
+}
+
+.shipping-option label,
+.payment-option label {
+    flex-grow: 1;
+    font-size: 1.05em;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+}
+
+.shipping-option .shipping-cost {
+    font-weight: 600;
+    color: #28a745; /* Màu xanh lá cho phí ship */
+    margin-left: 10px;
+}
+
+.payment-option i {
+    margin-right: 10px;
+    color: #777;
+    font-size: 1.1em;
+}
+
+.payment-option p.payment-description {
+    font-size: 0.85em;
+    color: #888;
+    margin-top: 5px;
+    margin-left: 30px; /* Thụt vào so với radio */
+}
+
+.payment-details-info {
+    margin-top: 15px;
+    margin-left: 30px;
+    background-color: #f0f7ff; /* Nền xanh nhạt cho chi tiết */
+    border: 1px dashed #cceeff;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.payment-details-info p {
+    margin-bottom: 8px;
+    font-size: 0.9em;
+    color: #444;
+}
+.payment-details-info p strong {
+    color: #222;
+}
+
+/* --- Order Summary --- */
+#order-summary-items {
+    max-height: 350px; /* Giới hạn chiều cao và thêm scroll */
+    overflow-y: auto;
+    padding-right: 10px; /* Tạo không gian cho scrollbar */
+    margin-bottom: 25px;
+}
+
+.summary-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #eee;
+}
+
+.summary-item:last-child {
+    border-bottom: none;
+}
+
+.summary-item-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.summary-item-details {
+    flex-grow: 1;
+}
+
+.summary-item-details h4 {
+    font-size: 1em;
+    font-weight: 500;
+    color: #333;
+    margin: 0 0 5px 0;
+}
+
+.summary-item-details p {
+    font-size: 0.85em;
+    color: #777;
+    margin: 0;
+}
+
+.summary-item-price {
+    font-size: 1em;
+    font-weight: 600;
+    color: #007bff;
+    margin-left: 10px;
+    white-space: nowrap; /* Ngăn giá bị xuống dòng */
+}
+
+.summary-breakdown {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    margin-top: 25px;
+}
+
+.summary-breakdown .summary-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 1.05em;
+    color: #555;
+}
+
+.summary-breakdown .total-line {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px dashed #ddd;
+}
+
+.place-order-btn {
+    width: 100%;
+    padding: 18px 25px;
+    background-color: #28a745; /* Nút đặt hàng màu xanh lá */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 15px rgba(40, 167, 69, 0.4);
+}
+
+.place-order-btn:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(40, 167, 69, 0.6);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    .checkout-content {
+        flex-direction: column; /* Chuyển thành 1 cột */
+    }
+    .shipping-payment-section,
+    .order-summary-section {
+        flex: none;
+        width: 100%;
+        margin-bottom: 30px;
+        padding: 25px;
+    }
+    .order-summary-section {
+        margin-bottom: 0; /* Bỏ margin bottom cho phần cuối cùng */
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        padding: 10px 20px;
+        flex-wrap: wrap;
+    }
+    .main-nav {
+        display: none;
+    }
+    .checkout-container {
+        padding: 20px;
+    }
+    .checkout-container h1 {
+        font-size: 1.8em;
+    }
+    .checkout-steps {
+        font-size: 0.9em;
+        flex-wrap: wrap; /* Cho phép các bước xuống dòng */
+    }
+    .shipping-info h2,
+    .shipping-method h2,
+    .payment-method h2,
+    .order-summary-section h2 {
+        font-size: 1.4em;
+    }
+    .place-order-btn {
+        font-size: 1.1em;
+        padding: 15px 20px;
+    }
+    .form-group.inline-group {
+        flex-direction: column; /* Stack các trường inline */
+        gap: 0;
+    }
+    .form-group.inline-group > div {
+        margin-bottom: 20px;
+    }
+    .form-group.inline-group > div:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-header .logo {
+        font-size: 20px;
+    }
+    .header-right .icon-link {
+        font-size: 16px;
+    }
+    .cart-icon .cart-count {
+        font-size: 10px;
+        padding: 1px 5px;
+        top: -5px;
+        right: -8px;
+        min-width: 15px;
+    }
+    .checkout-container {
+        padding: 15px;
+    }
+    .checkout-steps .step {
+        font-size: 0.85em;
+        padding: 0 5px;
+    }
+    .checkout-steps .step:not(:last-child)::after {
+        right: -10px;
+    }
+    .summary-item {
+        flex-wrap: wrap;
+    }
+    .summary-item-details {
+        flex-basis: 100%;
+        margin-bottom: 10px;
+    }
+    .summary-item-price {
+        flex-basis: 100%;
+        text-align: left;
+    }
+}

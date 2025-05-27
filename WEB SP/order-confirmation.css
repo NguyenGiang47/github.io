@@ -1,0 +1,438 @@
+/* order-confirmation.css - Professional & Aesthetic Version */
+
+/* Import font từ Google Fonts (Đảm bảo đồng bộ với style.css và checkout.css) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+/* --- Reset & Base Styles (Có thể đã có trong style.css, nếu có, giữ nguyên đó) --- */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa; /* Nền rất nhẹ nhàng */
+    color: #343a40;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Header (Copy từ checkout.css để đảm bảo đồng bộ) --- */
+.main-header {
+    background-color: #ffffff;
+    color: #343a40;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border-bottom: 1px solid #e9ecef;
+}
+
+.main-header .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #212529;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 40px;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: #495057;
+    font-size: 17px;
+    font-weight: 500;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+    color: #007bff;
+}
+
+.main-nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #007bff;
+    transition: width 0.3s ease-out, left 0.3s ease-out;
+}
+
+.main-nav ul li a:hover::after,
+.main-nav ul li a.active::after {
+    width: 100%;
+    left: 0;
+}
+
+.header-right {
+    display: flex;
+    gap: 30px;
+}
+
+.header-right .icon-link {
+    color: #495057;
+    font-size: 20px;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.header-right .icon-link:hover {
+    color: #007bff;
+}
+
+.cart-icon .cart-count {
+    background-color: #dc3545;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 2px 6px;
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    min-width: 18px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: none;
+}
+
+
+/* --- Main Confirmation Content --- */
+.confirmation-main-content {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-grow: 1;
+    background-color: #f8f9fa; /* Nền nhẹ nhàng */
+}
+
+.confirmation-container {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    padding: 50px 60px;
+    max-width: 800px; /* Rộng vừa phải cho trang xác nhận */
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center; /* Căn giữa nội dung chính */
+}
+
+.confirmation-icon {
+    font-size: 70px; /* Kích thước icon lớn */
+    color: #28a745; /* Màu xanh lá cây nổi bật cho icon thành công */
+    margin-bottom: 30px;
+    animation: bounceIn 0.8s ease-out; /* Hiệu ứng động khi load */
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.confirmation-container h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em;
+    font-weight: 700;
+    color: #212529;
+    margin-bottom: 20px;
+}
+
+.confirmation-container p {
+    font-size: 1.1em;
+    color: #495057;
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+.confirmation-container p.confirmation-message {
+    font-size: 1.25em;
+    font-weight: 500;
+    color: #343a40;
+    margin-bottom: 25px;
+}
+
+/* --- Order Details Summary --- */
+.order-details-summary {
+    background-color: #f0f8ff; /* Nền xanh nhạt */
+    border-radius: 10px;
+    padding: 30px;
+    margin: 40px auto; /* Khoảng cách trên dưới, căn giữa */
+    border: 1px solid #e0e9f0;
+    text-align: left; /* Chuyển lại căn trái cho nội dung chi tiết */
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.08); /* Bóng đổ nhẹ nhàng */
+}
+
+.order-details-summary h2,
+.order-items-list h3,
+.shipping-address-display h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #343a40;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.order-details-summary .detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 1.05em;
+    color: #555;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #e9ecef; /* Đường kẻ nét đứt */
+}
+
+.order-details-summary .detail-row:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.order-details-summary .detail-row span:first-child {
+    font-weight: 500;
+    color: #343a40;
+}
+
+.order-details-summary .detail-row #display-total-amount {
+    font-weight: 700;
+    color: #28a745; /* Màu xanh lá cho tổng cộng */
+    font-size: 1.1em;
+}
+
+/* --- Order Items List --- */
+.order-items-list {
+    margin: 40px auto;
+    text-align: left;
+}
+
+.order-confirmation-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #f0f2f5;
+}
+
+.order-confirmation-item:last-of-type {
+    border-bottom: none;
+}
+
+.order-confirmation-item img {
+    width: 80px; /* Kích thước ảnh lớn hơn */
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.order-confirmation-item .item-details {
+    flex-grow: 1;
+}
+
+.order-confirmation-item .item-details h4 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #343a40;
+    margin: 0 0 8px 0;
+}
+
+.order-confirmation-item .item-details p {
+    font-size: 0.9em;
+    color: #6c757d;
+    margin: 0;
+}
+
+.order-confirmation-item .item-total {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #28a745;
+    white-space: nowrap;
+}
+
+/* --- Shipping Address Display --- */
+.shipping-address-display {
+    margin: 40px auto;
+    text-align: left;
+    background-color: #fdfdfd;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.shipping-address-display p {
+    font-size: 1.05em;
+    color: #495057;
+    margin-bottom: 8px;
+}
+
+.shipping-address-display p span {
+    font-weight: 500;
+}
+
+
+/* --- Action Buttons --- */
+.action-buttons {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center; /* Căn giữa các nút */
+    gap: 20px; /* Khoảng cách giữa các nút */
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.45);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    .confirmation-container {
+        padding: 40px 40px;
+    }
+    .confirmation-container h1 {
+        font-size: 2.5em;
+    }
+    .order-details-summary,
+    .order-items-list,
+    .shipping-address-display {
+        margin: 30px auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        padding: 15px 25px;
+        flex-wrap: wrap;
+    }
+    .main-nav {
+        display: none;
+    }
+    .header-right {
+        width: 100%;
+        justify-content: flex-end;
+        margin-top: 10px;
+    }
+
+    .confirmation-container {
+        padding: 30px 25px;
+    }
+    .confirmation-icon {
+        font-size: 60px;
+        margin-bottom: 25px;
+    }
+    .confirmation-container h1 {
+        font-size: 2em;
+    }
+    .confirmation-container p {
+        font-size: 1em;
+    }
+    .confirmation-container p.confirmation-message {
+        font-size: 1.1em;
+    }
+
+    .order-details-summary h2,
+    .order-items-list h3,
+    .shipping-address-display h3 {
+        font-size: 1.6em;
+        margin-bottom: 20px;
+    }
+    .order-details-summary .detail-row {
+        flex-direction: column; /* Chuyển sang cột trên mobile */
+        align-items: flex-start;
+        gap: 5px;
+        padding-bottom: 10px;
+    }
+    .order-confirmation-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 15px 0;
+    }
+    .order-confirmation-item img {
+        width: 70px;
+        height: 70px;
+    }
+    .order-confirmation-item .item-details {
+        width: 100%;
+    }
+    .order-confirmation-item .item-total {
+        width: 100%;
+        text-align: right;
+    }
+    .action-buttons {
+        flex-direction: column; /* Nút xếp chồng lên nhau */
+        gap: 15px;
+    }
+    .btn-primary {
+        width: 100%; /* Nút chiếm hết chiều rộng */
+        padding: 15px 20px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-header .logo {
+        font-size: 24px;
+    }
+    .confirmation-container h1 {
+        font-size: 1.8em;
+    }
+    .confirmation-icon {
+        font-size: 50px;
+    }
+    .order-details-summary,
+    .shipping-address-display {
+        padding: 20px;
+    }
+    .order-details-summary h2,
+    .order-items-list h3,
+    .shipping-address-display h3 {
+        font-size: 1.4em;
+    }
+    .order-details-summary .detail-row,
+    .shipping-address-display p {
+        font-size: 0.95em;
+    }
+}
