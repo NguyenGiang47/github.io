@@ -5,23 +5,7 @@ body {
     background-color: #fff;
 
 }
-/* Giao diện mặc định cho desktop */
-.box {
-  display: flex;
-  gap: 20px;
-}
 
-/* Giao diện cho điện thoại */
-@media (max-width: 768px) {
-  .box {
-    flex-direction: column;
-    gap: 10px;
-  }
-}
-img {
-  width: 100%; /* tự co theo khung */
-  height: auto;
-}
 
                                                 /*THANH TIÊU ĐỀ SẢN PHẨM  8 - 41*/
 .navigation .dropdown {
