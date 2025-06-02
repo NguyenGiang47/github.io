@@ -778,7 +778,6 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
 .fa-facebook-f::before { content: "\f39e"; }
 .fa-instagram::before { content: "\f16d"; }
 .fa-youtube::before { content: "\f167"; }
