@@ -5,6 +5,7 @@ body {
     background-color: #fff;
 
 }
+
                                                 /*THANH TIÊU ĐỀ SẢN PHẨM  8 - 41*/
 .navigation .dropdown {
     position: relative;
@@ -1168,7 +1169,7 @@ body {
 .kham-pha-grid img {
   width: 100%;
   border-radius: 10px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
   transition: transform 0.3s ease;
 }
 
@@ -1180,141 +1181,162 @@ body {
 
 
 
-
-
 /* ---------- FOOTER ---------------------*/
+/* --- FOOTER TỔNG THỂ --- */
 .footer {
-    background-color: #f8f8f8;
+    background-color: #f2f2f2; /* Màu nền xám nhạt như trong ảnh */
+    padding: 40px 20px 0; /* Padding trên và hai bên. Padding dưới sẽ được xử lý bởi các phần tử con */
     color: #555;
-    padding: 40px 20px;
-    border-top: 1px solid #eee;
-    font-size: 15PX;
+    font-size: 0.9em;
+    /* Không có border-top cho footer */
 }
 
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
+/* --- PHẦN CÁC CỘT THÔNG TIN --- */
+.container.footer-content {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #eee;
+    justify-content: space-between; /* Đẩy các cột ra hai bên */
+    flex-wrap: wrap; /* Cho phép các cột xuống dòng trên màn hình nhỏ */
+    max-width: 1200px; /* Chiều rộng tối đa của nội dung */
+    margin: 0 auto; /* Căn giữa container */
+    padding-bottom: 50px; /* Khoảng cách dưới các cột thông tin, để có khoảng trống với social icons */
+    /* Không có border-bottom */
 }
 
 .footer-column {
-    flex: 1 1 200px; /* Các cột có chiều rộng tối thiểu 200px và chia đều không gian */
-    margin-bottom: 20px;
+    flex: 1; /* Cho phép các cột co giãn */
+    min-width: 180px; /* Chiều rộng tối thiểu để không bị quá hẹp */
+    margin-bottom: 20px; /* Khoảng cách dưới mỗi cột trên màn hình nhỏ */
+    padding: 0 10px; /* Padding ngang cho mỗi cột */
 }
 
 .footer-column h3 {
-    color: #333;
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 1.1em;
-    font-weight: bold;
+    color: #333; /* Màu tiêu đề tối hơn */
+    font-size: 1.05em; /* Kích thước tiêu đề hơi lớn hơn */
+    margin-bottom: 18px; /* Khoảng cách dưới tiêu đề */
+    text-transform: uppercase;
+    font-weight: bold; /* Chữ in đậm */
 }
 
 .footer-column ul {
-    list-style: none;
+    list-style: none; /* Bỏ dấu chấm đầu dòng */
     padding: 0;
     margin: 0;
 }
 
 .footer-column ul li {
-    margin-bottom: 8px;
+    margin-bottom: 10px; /* Khoảng cách giữa các mục list */
 }
 
-.footer-column ul li a {
+.footer-column ul li a,
+.footer-column ul li {
+    color: #777; /* Màu chữ xám nhạt cho các mục list */
     text-decoration: none;
-    color: #777;
 }
 
 .footer-column ul li a:hover {
-    color: #333;
+    color: #333; /* Màu đậm hơn khi hover */
 }
 
 .contact-info p {
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* Khoảng cách giữa các dòng thông tin liên hệ */
+    color: #777;
 }
-
-.contact-info a {
-    color:black; /* Màu xanh dương cho số điện thoại */
+/* Nếu bạn muốn số điện thoại là link và có màu khác, hãy thêm lại CSS cho a */
+.contact-info p a {
+    color: #777; /* Màu chữ cho số điện thoại nếu là link */
     text-decoration: none;
 }
-
-.contact-info a:hover {
+.contact-info p a:hover {
     text-decoration: underline;
 }
 
-.footer-social {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
+
+/* --- PHẦN ICON MẠNG XÃ HỘI --- */
+.container.footer-social {
+    max-width: 1200px;
+    margin: 0 auto; /* Căn giữa */
+    padding: 30px 0; /* Khoảng cách trên và dưới icon */
+    border-top: 1px solid #e0e0e0; /* Đường kẻ mỏng phía trên icon */
+    margin-bottom: 20px; /* Khoảng cách dưới icon */
+    text-align: left; /* Đảm bảo icon căn trái */
 }
 
 .footer-social a {
-    display: inline-block;
-    margin-right: 15px;
-    color: #777;
-    font-size: 2em; /* Kích thước icon */
-    text-decoration: none;
+    color: #333; /* Màu đen cho icon */
+    font-size: 1.6em; /* Kích thước icon */
+    margin-right: 25px; /* Khoảng cách giữa các icon */
+    transition: color 0.3s ease;
 }
 
 .footer-social a:hover {
-    color: #333;
+    color: #007bff; /* Màu xanh khi hover */
 }
 
-.footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 20px;
-    margin-top: 20px;
+
+/* --- PHẦN BẢN QUYỀN VÀ BADGE --- */
+.container.footer-copyright-row {
+    display: flex; /* Dùng flexbox để căn chỉnh bản quyền và badge */
+    justify-content: space-between; /* Đẩy bản quyền sang trái, badge sang phải */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0 40px; /* Khoảng cách trên, dưới và hai bên */
+    /* Không có border-top ở đây, đã có ở .footer-social */
 }
 
-.footer-bottom p {
-    margin: 0;
-    color: #777;
-    font-size: 0.8em;
+.footer-copyright-row p {
+    margin: 0; /* Bỏ margin mặc định của p */
+    color: #777; /* Màu chữ xám nhạt */
+    font-size: 0.85em; /* Kích thước chữ nhỏ */
+    flex-shrink: 0; /* Ngăn chữ bản quyền bị co lại */
 }
 
 .secure-badge img {
-    height: 40px; /* Điều chỉnh chiều cao logo bảo mật */
+    height: 35px; /* Kích thước của biểu tượng Bộ Công Thương */
+    vertical-align: middle; /* Căn giữa theo chiều dọc */
+    flex-shrink: 0; /* Ngăn ảnh bị co lại */
 }
 
-/* Стиль cho icon Font Awesome (nếu bạn chưa có) */
-.fab {
-    font-family: 'Font Awesome 5 Brands';
-    font-weight: 400;
-    font-style: normal;
-    display: inline-block;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
 
-.fa-facebook-f::before { content: "\f39e"; }
-.fa-instagram::before { content: "\f16d"; }
-.fa-youtube::before { content: "\f167"; }
-.fa-tiktok::before { content: "\fabd"; }
-
-/* Responsive cho màn hình nhỏ hơn */
+/* --- MEDIA QUERIES (RESPONSIVE) --- */
 @media (max-width: 768px) {
-    .footer-content {
-        justify-content: space-around;
+    .container.footer-content {
+        flex-direction: column; /* Xếp chồng các cột trên di động */
+        align-items: flex-start; /* Căn trái các cột */
+        padding-bottom: 20px;
     }
 
     .footer-column {
-        flex: 1 1 150px;
+        width: 100%;
+        text-align: left;
+        padding: 0;
+        margin-bottom: 20px; /* Tăng khoảng cách giữa các cột trên di động */
     }
 
-    .footer-bottom {
-        flex-direction: column;
-        align-items: center;
+    .container.footer-social {
+        padding: 20px 0;
+        margin-bottom: 15px;
+        text-align: center; /* Căn giữa icon trên mobile nếu muốn */
+    }
+
+    .footer-social a {
+        margin: 0 10px; /* Giảm khoảng cách giữa icon trên mobile */
+        font-size: 1.4em;
+    }
+
+    .container.footer-copyright-row {
+        flex-direction: column; /* Xếp chồng trên di động */
+        align-items: center; /* Căn giữa các mục */
+        padding-top: 15px;
+        padding-bottom: 20px; /* Tăng padding dưới cùng */
+    }
+
+    .footer-copyright-row p {
+        margin-bottom: 10px; /* Khoảng cách giữa bản quyền và badge */
         text-align: center;
     }
 
-    .footer-bottom p {
-        margin-bottom: 10px;
+    .secure-badge {
+        margin-top: 5px; /* Khoảng cách trên badge */
     }
 }
