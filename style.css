@@ -282,7 +282,8 @@ body {
 }
 
 .header-icons {
-    margin-top: 10px; /* Add some space above icons on smaller screens */
+    margin-top: 10px;/* Thêm một số khoảng trống phía trên các biểu tượng trên màn hình nhỏ hơn */
+
 }
 
 .header-icons a {
@@ -292,7 +293,7 @@ body {
     font-size: 1.1em;
 }
 
-/* Main Content & Hero Section */
+/* Nội dung chính */
 .main-content {
     padding: 20px 0;
 }
@@ -344,7 +345,7 @@ body {
     right: 20px;
 }
 
-/* Product Categories Section */
+                                    /* Mục danh mục sản phẩm */
 .product-categories {
     padding: 50px 20px;
     background-color: #f9f9f9;
@@ -359,11 +360,11 @@ body {
 
 .category-list {
     display: flex;
-    justify-content: flex-start;
-    gap: 20px;
+    justify-content: center;
+    gap: 20px; /* Giữ nguyên hoặc điều chỉnh nếu cần */
     overflow-x: auto;
     padding: 20px;
-    /* Add scrollbar styles for better UX */
+    /* Thêm kiểu thanh cuộn để có UX tốt hơn */
     scrollbar-width: thin;
     scrollbar-color: #ccc #f1f1f1;
 }
@@ -383,12 +384,15 @@ body {
 
 .category-item {
     position: relative;
-    width: 250px;
-    height: 350px;
+    /* Có thể điều chỉnh kích thước nếu muốn các hộp nhỏ hơn hoặc lớn hơn */
+    width: 250px; /* Giữ nguyên hoặc giảm xuống ví dụ 220px, 200px */
+    height: 350px; /* Giữ nguyên hoặc giảm xuống ví dụ 320px, 300px */
     overflow: hidden;
     cursor: pointer;
     border-radius: 10px;
-    flex-shrink: 0;
+    flex-shrink: 0; /* Đảm bảo mục không bị co lại */
+    /* Thêm shadow để phân biệt rõ ràng hơn với nền nếu ảnh có màu sáng */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Thêm shadow mặc định */
 }
 
 .category-item a {
@@ -422,20 +426,32 @@ body {
     justify-content: center;
     align-items: center;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    /* Đảm bảo văn bản trên overlay rõ ràng */
 }
 
 .overlay h3 {
     font-size: 20px;
     margin-bottom: 10px;
+    /* Đảm bảo văn bản này nằm gọn gàng bên trong */
+    padding: 0 10px; /* Thêm padding ngang để tránh chữ dính vào mép */
+    text-align: center; /* Căn giữa văn bản */
 }
 
+/* Hiệu ứng hover có thể được giữ nguyên */
 .category-item:hover {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
-    transition: transform 0.2s ease-in-out;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Tăng nhẹ shadow khi hover */
+    transform: translateY(-5px); /* Dịch chuyển lên trên nhiều hơn một chút */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Đảm bảo transition cho cả shadow */
 }
 
-/* New Products Section */
+.product-categories .container-category-list {
+    max-width: 1200px; /* Giới hạn chiều rộng tối đa */
+    margin: 0 auto; /* Căn giữa container */
+}
+
+*/
+
+                        /* Mục Sản phẩm mới */
 .new-products-section {
     padding: 40px 20px;
     background-color: #f8f8f8;
@@ -643,7 +659,8 @@ body {
     justify-content: center;
 }
 
-/* Best Selling Products Section */
+
+                                /* Mục Sản phẩm bán chạy nhất */
 .best-selling-products {
     padding: 40px 20px;
     background-color: #f9f9f9;
